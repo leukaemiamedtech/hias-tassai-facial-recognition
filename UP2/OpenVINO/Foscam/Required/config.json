@@ -1,0 +1,47 @@
+{
+    "Camera": {
+        "Id": 0,
+        "IP": "",
+        "Port": 8080
+    },
+    "Classifier": {
+        "Allowed": [
+            ".jpg",
+            ".JPG",
+            ".png",
+            ".PNG"
+        ],
+        "detection": "Model/face-detection-retail-0004.xml",
+        "reidentification": "Model/face-reidentification-retail-0095.xml",
+        "landmarks": "Model/landmarks-regression-retail-0009.xml",
+        "runas": "CPU",
+        "Known": "Model/Data/Known/",
+        "Test": "Model/Data/Test/",
+        "Threshold": 1.20
+    },
+    "Foscam": {
+        "RTSPuser": "",
+        "RTSPpass": "",
+        "RTSPip": "",
+        "RTSPport": "554",
+        "RTSPendpoint": "videoMain",
+        "IP": "",
+        "Port": 8080
+    },
+    "iotJumpWay": {
+        "host": "",
+        "port": 8883,
+        "ip": "localhost",
+        "ipinfo": "",
+        "lid": 0,
+        "zid": 0,
+        "did": 0,
+        "dn": "",
+        "un": "",
+        "pw": ""
+    },
+    "Socket": {
+        "host": "localhost",
+        "port": 8181
+    }
+}
