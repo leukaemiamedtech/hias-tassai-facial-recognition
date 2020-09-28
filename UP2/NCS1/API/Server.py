@@ -14,7 +14,6 @@
 
 import cv2
 import jsonpickle
-import geocoder
 import json
 import os
 import psutil
@@ -23,8 +22,6 @@ import sys
 import threading
 
 import numpy as np
-
-from imutils import face_utils
 
 from Classes.Helpers import Helpers
 from Classes.iotJumpWay import Device as iot
