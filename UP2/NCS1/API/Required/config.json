@@ -20,6 +20,7 @@
         "host": "",
         "port": 8883,
         "ip": "localhost",
+        "ipinfo": "",
         "lid": 0,
         "zid": 0,
         "did": 0,

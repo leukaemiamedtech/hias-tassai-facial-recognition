@@ -78,24 +78,26 @@ class Server():
 		mem = psutil.virtual_memory()[2]
 		hdd = psutil.disk_usage('/').percent
 		tmp = psutil.sensors_temperatures()['coretemp'][0].current
+		r = requests.get('http://ipinfo.io/json?token=' +
+							self.Helpers.confs["iotJumpWay"]["ipinfo"])
+		data = r.json()
+		location = data["loc"].split(',')
 
-		self.Helpers.logger.info(
-			"TassAI Facial API Life (TEMPERATURE): " + str(tmp) + "\u00b0")
-		self.Helpers.logger.info(
-			"TassAI Facial API Life (CPU): " + str(cpu) + "%")
-		self.Helpers.logger.info(
-			"TassAI Facial API Life (Memory): " + str(mem) + "%")
-		self.Helpers.logger.info(
-			"TassAI Facial API Life (HDD): " + str(hdd) + "%")
+		self.Helpers.logger.info("TassAI Life (TEMPERATURE): " + str(tmp) + "\u00b0")
+		self.Helpers.logger.info("TassAI Life (CPU): " + str(cpu) + "%")
+		self.Helpers.logger.info("TassAI Life (Memory): " + str(mem) + "%")
+		self.Helpers.logger.info("TassAI Life (HDD): " + str(hdd) + "%")
+		self.Helpers.logger.info("TassAI Life (LAT): " + str(location[0]))
+		self.Helpers.logger.info("TassAI Life (LNG): " + str(location[1]))
 
 		# Send iotJumpWay notification
 		self.iot.channelPub("Life", {
-			"CPU": cpu,
-			"Memory": mem,
-			"Diskspace": hdd,
-			"Temperature": tmp,
-			"Latitude": 41.5463,
-			"Longitude": 2.1086
+			"CPU": str(cpu),
+			"Memory": str(mem),
+			"Diskspace": str(hdd),
+			"Temperature": str(tmp),
+			"Latitude": float(location[0]),
+			"Longitude": float(location[1])
 		})
 
 		# Life thread
