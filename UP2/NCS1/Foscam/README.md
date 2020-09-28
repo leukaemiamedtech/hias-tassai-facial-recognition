@@ -291,20 +291,20 @@ You should see the following output:
 2020-09-28 12:57:25,826 - OpenCV - INFO - Helpers class initialization complete.
 2020-09-28 12:57:25,834 - OpenCV - INFO - OpenCV class initialized.
 2020-09-28 12:57:25,835 - TassAI - INFO - Connected To Camera
-2020-09-28 12:57:25,836 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/OpenVINO/Foscam/Model/face-detection-retail-0004.xml'
+2020-09-28 12:57:25,836 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/NCS1/Foscam/Model/face-detection-retail-0004.xml'
 2020-09-28 12:57:25,836 - OpenCV - INFO - Connecting to Foscam.
 2020-09-28 12:57:25,858 - TassAI - INFO - Model loaded
 2020-09-28 12:57:25,869 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
-2020-09-28 12:57:25,868 - TassAI - INFO - Loading the model from '/home/up2b/GeniSyTassAI/UP2/OpenVINO/Foscam/Model/landmarks-regression-retail-0009.xml'
+2020-09-28 12:57:25,868 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/NCS1/Foscam/Model/landmarks-regression-retail-0009.xml'
 2020-09-28 12:57:25,870 - iotJumpWay - INFO - rc: 0
 2020-09-28 12:57:25,884 - TassAI - INFO - Model loaded
 2020-09-28 12:57:25,884 - iotJumpWay - INFO - Published to Device Status 1/Devices/4/2/Status
-2020-09-28 12:57:25,885 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/OpenVINO/Foscam/Model/face-reidentification-retail-0095.xml'
+2020-09-28 12:57:25,885 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/NCS1/Foscam/Model/face-reidentification-retail-0095.xml'
 2020-09-28 12:57:25,886 - iotJumpWay - INFO - -- Published to Device channel
 2020-09-28 12:57:25,955 - TassAI - INFO - Model loaded
 2020-09-28 12:57:27,384 - TassAI - INFO - Models loaded
-WARNING:root:File with the same name already exists at /home/up2b/TassAI/UP2/OpenVINO/Foscam/Model/Data/Known. So it won't be stored.
-WARNING:root:Not found faces on the image '/home/up2b/TassAI/Vision/UP2/OpenVINO/Foscam/Model/Data/Known/1-0.jpg'
+WARNING:root:File with the same name already exists at /home/up2b/TassAI/UP2/NCS1/Foscam/Model/Data/Known. So it won't be stored.
+WARNING:root:Not found faces on the image '/home/up2b/TassAI/UP2/NCS1/Foscam/Model/Data/Known/1-0.jpg'
 2020-09-28 12:57:27,798 - TassAI - INFO - Database is built, registered 1 identities
 INFO:TassAI:Database is built, registered 1 identities
 2020-09-28 12:57:27,799 - Sockets - INFO - Started & connected to socket server: tcp://localhost:8181
