@@ -22,13 +22,13 @@ import sys
 import threading
 
 import numpy as np
+from threading import Thread
 
 from Classes.Helpers import Helpers
 from Classes.iotJumpWay import Device as iot
 from Classes.NCS1 import NCS1
 
 from flask import Flask, request, Response
-
 
 class Server():
 	""" Server Class
@@ -101,7 +101,7 @@ class Server():
 		})
 
 		# Life thread
-		threading.Timer(60.0, self.life).start()
+		threading.Timer(300.0, self.life).start()
 
 	def ncs(self):
 		""" Configures NCS1. """
@@ -117,7 +117,7 @@ class Server():
 		""" Starts the TassAI Facial API software threads. """
 
 		# Life thread
-		threading.Timer(60.0, self.life).start()
+		Thread(target=self.life, args=(), daemon=True).start()
 
 	def signal_handler(self, signal, frame):
 		self.Helpers.logger.info("Disconnecting")
