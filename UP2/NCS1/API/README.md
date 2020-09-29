@@ -210,13 +210,14 @@ You need to setup your iotJumpWay TassAI security device that will be used to co
 - For **Stream File**, you can enter **NA** as this field is not used for an API device.
 - For **Socket Port**, you can enter **NA** as this field is not used for an API device.
 
-Once you have created your device you will be taken to the new device page. Add your server name and the information provided on that page to your  configuration.
+Once you have created your device you will be taken to the new device page. Add your server name and the information provided on that page to your  configuration.  You will also need an [ipinfo](https://ipinfo.io/) API key.
 
 ```
   "iotJumpWay": {
     "host": "",
     "port": 8883,
     "ip": "localhost",
+    "ipinfo": "localhost",
     "lid": 0,
     "zid": 0,
     "did": 0,
@@ -254,30 +255,37 @@ Execute the following command to start your server:
 You should see the following output:
 
 ```
-2020-08-24 19:25:42,157 - Server - INFO - Helpers class initialization complete.
-2020-08-24 19:25:42,159 - iotJumpWay - INFO - Helpers class initialization complete.
-2020-08-24 19:25:42,159 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
-2020-08-24 19:25:42,160 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
-2020-08-24 19:25:42,160 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
-2020-08-24 19:25:42,347 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
-2020-08-24 19:25:42,349 - iotJumpWay - INFO - -- Subscribed to Device Commands Channel
-2020-08-24 19:25:42,352 - NCS1 - INFO - Helpers class initialization complete.
-2020-08-24 19:25:42,353 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
-2020-08-24 19:25:42,354 - iotJumpWay - INFO - rc: 0
-2020-08-24 19:25:42,355 - iotJumpWay - INFO - Published to Device Status 1/Devices/1/9/Status
-2020-08-24 19:25:42,356 - iotJumpWay - INFO - -- Published to Device channel
-2020-08-24 19:25:42,359 - iotJumpWay - INFO - JumpWayMQTT Subscription: 1
-2020-08-24 19:25:43,249 - NCS1 - INFO - Connected to Neural Compute Stick 1
-2020-08-24 19:25:43,287 - NCS1 - INFO - Loaded NCS1 graph
-2020-08-24 19:25:43,917 - NCS1 - INFO - Known data preprocessed!
-2020-08-24 19:25:46,695 - NCS1 - INFO - NCS1 class initialized.
-2020-08-24 19:25:46,696 - Server - INFO - NCS configured.
+2020-09-29 13:35:42,214 - Server - INFO - Helpers class initialization complete.
+2020-09-29 13:35:42,215 - iotJumpWay - INFO - Helpers class initialization complete.
+2020-09-29 13:35:42,215 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
+2020-09-29 13:35:42,216 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
+2020-09-29 13:35:42,216 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
+2020-09-29 13:35:42,244 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
+2020-09-29 13:35:42,245 - iotJumpWay - INFO - -- Subscribed to Device Commands Channel
+2020-09-29 13:35:42,248 - NCS1 - INFO - Helpers class initialization complete.
+2020-09-29 13:35:42,312 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
+2020-09-29 13:35:42,313 - iotJumpWay - INFO - rc: 0
+2020-09-29 13:35:42,313 - iotJumpWay - INFO - Published to Device Status 1/Devices/4/2/Status
+2020-09-29 13:35:42,314 - iotJumpWay - INFO - JumpWayMQTT Subscription: 1
+2020-09-29 13:35:42,315 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 13:35:43,251 - NCS1 - INFO - Connected to Neural Compute Stick 1
+2020-09-29 13:35:43,289 - NCS1 - INFO - Loaded NCS1 graph
+2020-09-29 13:35:43,438 - NCS1 - INFO - Known data preprocessed!
+2020-09-29 13:35:46,091 - NCS1 - INFO - NCS1 class initialized.
+2020-09-29 13:35:46,091 - Server - INFO - NCS configured.
  * Serving Flask app "Server" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
  * Running on http://###.###.#.##:8080/ (Press CTRL+C to quit)
+2020-09-29 13:35:46,374 - Server - INFO - TassAI Life (TEMPERATURE): 52.0°
+2020-09-29 13:35:46,375 - Server - INFO - TassAI Life (CPU): 38.7%
+2020-09-29 13:35:46,375 - Server - INFO - TassAI Life (Memory): 22.7%
+2020-09-29 13:35:46,376 - Server - INFO - TassAI Life (HDD): 78.8%
+2020-09-29 13:35:46,377 - Server - INFO - TassAI Life (LAT): 41.3888
+2020-09-29 13:35:46,377 - Server - INFO - TassAI Life (LNG): 2.1590
+2020-09-29 13:35:46,379 - iotJumpWay - INFO - -- Published to Device channel
 ```
 
 Next open a new terminal and execute the following command:
@@ -289,34 +297,31 @@ Next open a new terminal and execute the following command:
 The output from my test dataset in the Client terminal:
 
 ```
-2020-08-24 19:37:37,027 - Client - INFO - Helpers class initialization complete.
-2020-08-24 19:37:37,028 - Client - INFO - NCS1 class initialized.
-2020-08-24 19:37:37,051 - Client - INFO - Sending Model/Data/Test/1.jpg
-2020-08-24 19:37:42,677 - Client - INFO - Sending Model/Data/Test/2.jpg
-2020-08-24 19:37:48,287 - Client - INFO - Sending Model/Data/Test/3.jpg
+2020-09-29 14:26:41,584 - Client - INFO - Helpers class initialization complete.
+2020-09-29 14:26:41,585 - Client - INFO - NCS1 class initialized.
+2020-09-29 14:26:41,585 - Client - INFO - Sending Model/Data/Test/1.jpg
+2020-09-29 14:26:47,259 - Client - INFO - Sending Model/Data/Test/3.jpg
+2020-09-29 14:26:53,077 - Client - INFO - Sending Model/Data/Test/2.jpg
 ```
 
 The output from my test dataset in the Server terminal:
 
 ```
-2020-08-24 19:37:37,532 - NCS1 - INFO - Calculated Match: 0.0
-2020-08-24 19:37:37,533 - NCS1 - INFO - TassAI identified User #1
-2020-08-24 19:37:37,667 - Server - INFO - TassAI detected 1 known humans and 0 intruders.
-2020-08-24 19:37:37,669 - iotJumpWay - INFO - -- Published to Device channel
-###.###.#.## - - [24/Aug/2020 19:37:37] "POST /Inference HTTP/1.1" 200 -
-2020-08-24 19:37:43,128 - NCS1 - INFO - Calculated Mismatch: 2.003763258457184
-2020-08-24 19:37:43,273 - NCS1 - INFO - Calculated Match: 0.0
-2020-08-24 19:37:43,273 - NCS1 - INFO - TassAI identified User #2
-2020-08-24 19:37:43,276 - Server - INFO - TassAI detected 1 known humans and 0 intruders.
-2020-08-24 19:37:43,279 - iotJumpWay - INFO - -- Published to Device channel
-###.###.#.## - - [24/Aug/2020 19:37:43] "POST /Inference HTTP/1.1" 200 -
-2020-08-24 19:37:48,736 - NCS1 - INFO - Calculated Mismatch: 1.707361876964569
-2020-08-24 19:37:48,880 - NCS1 - INFO - Calculated Mismatch: 1.7294368147850037
-2020-08-24 19:37:49,025 - NCS1 - INFO - Calculated Match: 0.0
-2020-08-24 19:37:49,025 - NCS1 - INFO - TassAI identified User #3
-2020-08-24 19:37:49,027 - Server - INFO - TassAI detected 1 known humans and 0 intruders.
-2020-08-24 19:37:49,026 - iotJumpWay - INFO - -- Published to Device channel
-###.###.#.## - - [24/Aug/2020 19:37:49] "POST /Inference HTTP/1.1" 200 -
+2020-09-29 14:26:42,245 - NCS1 - INFO - Calculated Match: 0.0
+2020-09-29 14:26:42,246 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 14:26:42,248 - Server - INFO - GeniSys detected 1 known humans and 0 intruders.
+###.###.#.## - - [29/Sep/2020 14:26:42] "POST /Inference HTTP/1.1" 200 -
+2020-09-29 14:26:42,249 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 14:26:48,063 - NCS1 - INFO - Calculated Mismatch: 1.707361876964569
+2020-09-29 14:26:48,064 - NCS1 - INFO - TassAI identified an intruder
+2020-09-29 14:26:48,065 - Server - INFO - GeniSys detected 0 known humans and 1 intruders.
+2020-09-29 14:26:48,066 - iotJumpWay - INFO - -- Published to Device channel
+###.###.#.## - - [29/Sep/2020 14:26:48] "POST /Inference HTTP/1.1" 200 -
+2020-09-29 14:26:53,740 - NCS1 - INFO - Calculated Mismatch: 2.003763258457184
+2020-09-29 14:26:53,741 - NCS1 - INFO - TassAI identified an intruder
+2020-09-29 14:26:53,742 - Server - INFO - GeniSys detected 0 known humans and 1 intruders.
+###.###.#.## - - [29/Sep/2020 14:26:53] "POST /Inference HTTP/1.1" 200 -
+2020-09-29 14:26:53,744 - iotJumpWay - INFO - -- Published to Device channel
 ```
 
 ## Service Setup

@@ -19,6 +19,7 @@ import os
 import psutil
 import signal
 import sys
+import requests
 import threading
 
 import numpy as np
@@ -170,14 +171,13 @@ def Inference():
 
 			i += 1
 
-		# Send iotJumpWay notification
-		Server.iot.channelPub("Sensors", {
-			"Type": "TassAI",
-			"Sensor": "Facial API",
-			"Value": detected,
-			"Message": "GeniSys detected " + str(idd) +
-                    " known humans and " + str(intruders) + " intruders."
-		})
+			# Send iotJumpWay notification
+			Server.iot.channelPub("Sensors", {
+				"Type": "TassAI",
+				"Sensor": "Facial API",
+				"Value": known,
+				"Message": msg
+			})
 
 		resp = jsonpickle.encode({
 			"Response": "OK",

@@ -13,7 +13,6 @@ pip3 install --user dlib
 pip3 install --user flask
 pip3 install --user imutils
 pip3 install --user jsonpickle
-pip3 install --user opencv-python
 pip3 install --user paho-mqtt
 pip3 install --user psutil
 pip3 install --user requests
@@ -96,15 +95,15 @@ fi
 
 cd ~/
 
-if [ -e GeniSysAI.graph ]
+if [ -e TassAI.graph ]
 then
     echo "-- Graph file exists, skipping compilation"
 else
     echo "-- Compiling graph file"
     cd TassAI/UP2/NCS1/API/Model/20170512-110547/facenet_celeb_ncs
-    mvNCCompile  facenet_celeb_ncs.meta -w facenet_celeb_ncs -s 12 -in input -on output -o GeniSysAI.graph
-    cp GeniSysAI.graph ../..
-    cd ../../../
+    mvNCCompile  facenet_celeb_ncs.meta -w facenet_celeb_ncs -s 12 -in input -on output -o TassAI.graph
+    cp TassAI.graph ../..
+    cd ~/
     echo "-- Graph compiled"
 fi
 
