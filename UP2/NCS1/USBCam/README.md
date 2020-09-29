@@ -218,7 +218,7 @@ You need to setup your iotJumpWay TassAI security device that will be used to co
 - For **Stream File**, this can be anything you like but it must end with **.mjpg**.
 - For **Socket Port** add what ever port you used in the configuration.
 
-Once you have created your device you will be taken to the new device page. Add your server name and the information provided on that page to your  configuration.
+Once you have created your device you will be taken to the new device page. Add your server name and the information provided on that page to your  configuration. You will also need an [ipinfo](https://ipinfo.io/) API key.
 
 ```
   "iotJumpWay": {
