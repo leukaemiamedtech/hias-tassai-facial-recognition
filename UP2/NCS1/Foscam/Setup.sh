@@ -11,10 +11,8 @@ sudo apt -y install cmake
 
 pip3 install --user dlib
 pip3 install --user flask
-pip3 install --user geocoder
 pip3 install --user imutils
 pip3 install --user jsonpickle
-pip3 install --user opencv-python
 pip3 install --user paho-mqtt
 pip3 install --user psutil
 pip3 install --user zmq
