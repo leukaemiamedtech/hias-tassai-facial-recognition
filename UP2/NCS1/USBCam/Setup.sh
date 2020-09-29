@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "!! This program will setup everything you need to use the UP2 NCS1 Facial Recognition USB Security System !!"
+echo "!! This program will setup everything you need to use Facenet !!"
 echo " "
 
 echo "-- Installing requirements"
@@ -10,11 +10,12 @@ sudo apt update
 sudo apt -y install cmake
 
 pip3 install --user dlib
-pip3 install --user geocoder
+pip3 install --user flask
 pip3 install --user imutils
 pip3 install --user jsonpickle
 pip3 install --user paho-mqtt
 pip3 install --user psutil
+pip3 install --user requests
 pip3 install --user zmq
 
 echo "-- Installing NCSDK"
@@ -95,15 +96,15 @@ fi
 
 cd ~/
 
-if [ -e GeniSysAI.graph ]
+if [ -e TassAI.graph ]
 then
     echo "-- Graph file exists, skipping compilation"
 else
     echo "-- Compiling graph file"
     cd TassAI/UP2/NCS1/USBCam/Model/20170512-110547/facenet_celeb_ncs
-    mvNCCompile  facenet_celeb_ncs.meta -w facenet_celeb_ncs -s 12 -in input -on output -o GeniSysAI.graph
-    cp GeniSysAI.graph ../..
-    cd ../../../
+    mvNCCompile  facenet_celeb_ncs.meta -w facenet_celeb_ncs -s 12 -in input -on output -o TassAI.graph
+    cp TassAI.graph ../..
+    cd ~/
     echo "-- Graph compiled"
 fi
 
@@ -112,7 +113,8 @@ cd TassAI/UP2/NCS1/USBCam/Model/dlib
 wget http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 -O shape_predictor_68_face_landmarks.dat.bz2
 bzip2 -dk shape_predictor_68_face_landmarks.dat.bz2
 echo "-- Downloaded and decompressed shape_predictor_68_face_landmarks.dat"
-echo "-- Installation complete!"
 
 pip3 install --user scikit-build
 pip3 install --user opencv-python
+
+echo "-- Installation complete!"

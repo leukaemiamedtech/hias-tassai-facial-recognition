@@ -1,16 +1,17 @@
-############################################################################################
+######################################################################################################
 #
-# Repository:    HIAS TassAI
-# Project:       NCS1 USB Camera Security System
+# Organization:  Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss
+# Project:       UP2 NCS1 Facial Recognition USB Security System
 #
 # Author:        Adam Milton-Barker (AdamMiltonBarker.com)
+#
 
 # Title:         TassAI Class
 # Description:   TassAI NCS1 USB Camera Security System class.
 # License:       MIT License
-# Last Modified: 2020-08-27
+# Last Modified: 2020-09-28
 #
-############################################################################################
+######################################################################################################
 
 import cv2
 
@@ -43,8 +44,6 @@ class TassAI():
 		""" Connects to the USB camera. """
 
 		self.camera = OpenCV(self.Helpers.confs["Camera"]["Id"])
-
-		self.Helpers.logger.info("Connected To Camera")
 
 	def ncs(self):
 		""" Configures NCS1. """

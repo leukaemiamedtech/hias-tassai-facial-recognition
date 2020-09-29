@@ -47,7 +47,7 @@ class OpenCV():
 
 		self.Helpers.logger.info("Connecting to USB camera.")
 		cap = cv2.VideoCapture(stream)
-		self.Helpers.logger.info("Connected to Foscam.")
+		self.Helpers.logger.info("Connected to USB Camera.")
 		run = True
 
 		while run:

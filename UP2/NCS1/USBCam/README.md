@@ -152,16 +152,16 @@ Using the ls command in your home directory should show you the following.
   TassAI
 ```
 
-Navigate to **TassAI/UP2/NCS1/Standard/USBCam** directory, this is your project root directory for this tutorial.
+Navigate to **TassAI/UP2/NCS1/USBCam** directory, this is your project root directory for this tutorial.
 
 ### Developer Forks
 Developers from the Github community that would like to contribute to the development of this project should first create a fork, and clone that repository. For detailed information please view the [CONTRIBUTING](../../../CONTRIBUTING.md "CONTRIBUTING") guide. You should pull the latest code from the development branch.
 
 ```
-  git clone -b "0.2.0" https://github.com/LeukemiaAiResearch/TassAI.git
+  git clone -b "0.1.0" https://github.com/LeukemiaAiResearch/TassAI.git
 ```
 
-The **-b "0.2.0"** parameter ensures you get the code from the latest master branch. Before using the below command please check our latest master branch in the button at the top of the project README.
+The **-b "0.1.0"** parameter ensures you get the code from the latest master branch. Before using the below command please check our latest master branch in the button at the top of the project README.
 
 ## Install Dependencies
 Now you will install the required dependencies. [Setup.sh](Setup.sh "Setup.sh")is an executable shell script that will do the following:
@@ -261,42 +261,75 @@ To make sure that your server is responding correctly use the following command:
 You should see the following output:
 
 ```
-2020-09-28 12:57:25,783 - Camera - INFO - Helpers class initialization complete.
-2020-09-28 12:57:25,784 - iotJumpWay - INFO - Helpers class initialization complete.
-2020-09-28 12:57:25,784 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
-2020-09-28 12:57:25,785 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
-2020-09-28 12:57:25,785 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
-2020-09-28 12:57:25,811 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
-2020-09-28 12:57:25,813 - Sockets - INFO - Helpers class initialization complete.
-2020-09-28 12:57:25,813 - Sockets - INFO - Socket Helper Class initialization complete.
-2020-09-28 12:57:25,814 - Camera - INFO - Camera Class initialization complete.
-2020-09-28 12:57:25,818 - Sockets - INFO - Subscribed to socket: tcp://localhost:8181
-2020-09-28 12:57:25,820 - TassAI - INFO - Helpers class initialization complete.
-2020-09-28 12:57:25,824 - TassAI - INFO - TassAI class initialized.
-2020-09-28 12:57:25,824 - Camera - INFO - Camera server started on ###.###.#.##:8080
-2020-09-28 12:57:25,826 - OpenCV - INFO - Helpers class initialization complete.
-2020-09-28 12:57:25,834 - OpenCV - INFO - OpenCV class initialized.
-2020-09-28 12:57:25,835 - TassAI - INFO - Connected To Camera
-2020-09-28 12:57:25,836 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/NCS1/Camera/Model/face-detection-retail-0004.xml'
-2020-09-28 12:57:25,836 - OpenCV - INFO - Connecting to Camera.
-2020-09-28 12:57:25,858 - TassAI - INFO - Model loaded
-2020-09-28 12:57:25,869 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
-2020-09-28 12:57:25,868 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/NCS1/Camera/Model/landmarks-regression-retail-0009.xml'
-2020-09-28 12:57:25,870 - iotJumpWay - INFO - rc: 0
-2020-09-28 12:57:25,884 - TassAI - INFO - Model loaded
-2020-09-28 12:57:25,884 - iotJumpWay - INFO - Published to Device Status 1/Devices/4/2/Status
-2020-09-28 12:57:25,885 - TassAI - INFO - Loading the model from '/home/up2b/TassAI/UP2/NCS1/Camera/Model/face-reidentification-retail-0095.xml'
-2020-09-28 12:57:25,886 - iotJumpWay - INFO - -- Published to Device channel
-2020-09-28 12:57:25,955 - TassAI - INFO - Model loaded
-2020-09-28 12:57:27,384 - TassAI - INFO - Models loaded
-WARNING:root:File with the same name already exists at /home/up2b/TassAI/UP2/NCS1/Camera/Model/Data/Known. So it won't be stored.
-WARNING:root:Not found faces on the image '/home/up2b/TassAI/UP2/NCS1/Camera/Model/Data/Known/1-0.jpg'
-2020-09-28 12:57:27,798 - TassAI - INFO - Database is built, registered 1 identities
-INFO:TassAI:Database is built, registered 1 identities
-2020-09-28 12:57:27,799 - Sockets - INFO - Started & connected to socket server: tcp://localhost:8181
-INFO:Sockets:Started & connected to socket server: tcp://localhost:8181
-2020-09-28 12:57:29,926 - OpenCV - INFO - Connected to Camera.
-
+2020-09-29 15:04:24,954 - Camera - INFO - Helpers class initialization complete.
+2020-09-29 15:04:24,955 - iotJumpWay - INFO - Helpers class initialization complete.
+2020-09-29 15:04:24,955 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
+2020-09-29 15:04:24,956 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
+2020-09-29 15:04:24,956 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
+2020-09-29 15:04:24,996 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
+2020-09-29 15:04:24,998 - iotJumpWay - INFO - -- Subscribed to Device Commands Channel
+2020-09-29 15:04:25,000 - Sockets - INFO - Helpers class initialization complete.
+2020-09-29 15:04:25,001 - Sockets - INFO - Socket Helper Class initialization complete.
+2020-09-29 15:04:25,001 - Camera - INFO - Camera Class initialization complete.
+2020-09-29 15:04:25,005 - Sockets - INFO - Subscribed to socket: tcp://localhost:8181
+2020-09-29 15:04:25,007 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
+2020-09-29 15:04:25,008 - TassAI - INFO - Helpers class initialization complete.
+2020-09-29 15:04:25,007 - iotJumpWay - INFO - rc: 0
+2020-09-29 15:04:25,010 - iotJumpWay - INFO - Published to Device Status 1/Devices/1/1/Status
+2020-09-29 15:04:25,009 - TassAI - INFO - TassAI class initialized.
+2020-09-29 15:04:25,011 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:25,011 - Camera - INFO - Camera server started on ###.###.#.##:8080
+2020-09-29 15:04:25,013 - OpenCV - INFO - Helpers class initialization complete.
+2020-09-29 15:04:25,016 - iotJumpWay - INFO - JumpWayMQTT Subscription: 1
+2020-09-29 15:04:25,023 - OpenCV - INFO - OpenCV class initialized.
+2020-09-29 15:04:25,024 - OpenCV - INFO - Connecting to USB camera.
+2020-09-29 15:04:25,026 - NCS1 - INFO - Helpers class initialization complete.
+2020-09-29 15:04:25,368 - OpenCV - INFO - Connected to Camera.
+2020-09-29 15:04:28,828 - NCS1 - INFO - Connected to Neural Compute Stick 1
+2020-09-29 15:04:28,871 - NCS1 - INFO - Loaded NCS1 graph
+2020-09-29 15:04:29,187 - NCS1 - INFO - Known data preprocessed!
+2020-09-29 15:04:29,187 - NCS1 - INFO - NCS1 class initialized.
+2020-09-29 15:04:29,188 - TassAI - INFO - NCS1 configured.
+2020-09-29 15:04:29,189 - Sockets - INFO - Started & connected to socket server: tcp://localhost:8181
+2020-09-29 15:04:32,668 - NCS1 - INFO - Calculated Match: 0.6489086151123047
+2020-09-29 15:04:32,815 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:32,816 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:33,206 - NCS1 - INFO - Calculated Match: 0.6780565977096558
+2020-09-29 15:04:33,207 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:33,210 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:33,605 - NCS1 - INFO - Calculated Match: 0.7129222750663757
+2020-09-29 15:04:33,605 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:33,606 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:33,999 - NCS1 - INFO - Calculated Match: 0.698941707611084
+2020-09-29 15:04:33,999 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:34,000 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:34,393 - NCS1 - INFO - Calculated Match: 0.6882005929946899
+2020-09-29 15:04:34,394 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:34,395 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:34,788 - NCS1 - INFO - Calculated Match: 0.7014083862304688
+2020-09-29 15:04:34,789 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:34,789 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:35,186 - NCS1 - INFO - Calculated Match: 0.7462751865386963
+2020-09-29 15:04:35,187 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:35,188 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:35,581 - NCS1 - INFO - Calculated Match: 0.7502866387367249
+2020-09-29 15:04:35,582 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:35,583 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:35,976 - NCS1 - INFO - Calculated Match: 0.7378405928611755
+2020-09-29 15:04:35,977 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:35,978 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:36,370 - NCS1 - INFO - Calculated Match: 0.7412561774253845
+2020-09-29 15:04:36,370 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:36,371 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:36,764 - NCS1 - INFO - Calculated Match: 0.6631295680999756
+2020-09-29 15:04:36,765 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:36,766 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:37,158 - NCS1 - INFO - Calculated Match: 0.7121732234954834
+2020-09-29 15:04:37,158 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:37,159 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-29 15:04:37,552 - NCS1 - INFO - Calculated Match: 0.7222686409950256
+2020-09-29 15:04:37,552 - NCS1 - INFO - TassAI identified User #1
+2020-09-29 15:04:37,553 - iotJumpWay - INFO - -- Published to Device channel
 ```
 
 Now visit URL replacing the values as expected: **http://YourUp2Ip:YourPort/YourStreamFile**.
@@ -324,13 +357,13 @@ Next add the following code to the file, replacing **YourUser** with the usernam
 
 ```
 [Unit]
-Description=TassAI USB Camera Security System
+Description=TassAI UP2 NCS1 Facial Recognition USB Security System
 After=multi-user.target
 
 [Service]
 User=YourUser
 Type=simple
-ExecStart=/usr/bin/python3 /home/YourUser/TassAI/UP2/NCS1/Standard/USBCam/Camera.py
+ExecStart=/usr/bin/python3 /home/YourUser/TassAI/UP2/NCS1/USBCam/Camera.py
 
 [Install]
 WantedBy=multi-user.target
@@ -353,7 +386,7 @@ sudo systemctl status Camera.service
 You should see the following output.
 
 ```
-● api.service - TassAI USB Camera Security System
+● api.service - TassAI UP2 NCS1 Facial Recognition USB Security System
    Loaded: loaded (/lib/systemd/system/Camera.service; enabled; vendor preset: enabled)
    Active: active (running) since Mon 2020-08-24 19:45:31 CEST; 4s ago
  Main PID: 3481 (python3)
@@ -361,7 +394,7 @@ You should see the following output.
    Memory: 46.3M
       CPU: 2.878s
    CGroup: /system.slice/Camera.service
-           └─3481 /usr/bin/python3 /home/YourUser/TassAI/UP2/NCS1/Standard/USBCam/Camera.py
+           └─3481 /usr/bin/python3 /home/YourUser/TassAI/UP2/NCS1/USBCam/Camera.py
 ```
 
 Your system will now start every time you boot up your UP2. You can use the following commands to manage your service in the future.

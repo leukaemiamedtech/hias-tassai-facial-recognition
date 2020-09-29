@@ -62,6 +62,8 @@ class CamRead(Thread):
 		time1 = 0
 		time2 = 0
 
+		self.publishes = [None] * (len(self.TassAI.NCS1.encoded) + 1)
+
 		while True:
 			time.sleep(0.05)
 			try:
@@ -100,13 +102,26 @@ class CamRead(Thread):
 						else:
 							mesg = "TassAI identified intruder"
 
-						# Send iotJumpWay notification
-						self.iot.channelPub("Sensors", {
-							"Type": "TassAI",
-							"Sensor": "Foscam Camera",
-							"Value": known,
-							"Message": mesg
-						})
+						# If iotJumpWay publish for user is in past
+						if (self.publishes[int(known)] is None or (self.publishes[int(known)] + (1 * 20)) < time.time()):
+							# Update publish time for user
+							self.publishes[int(known)] = time.time()
+
+							# Send iotJumpWay notification
+							self.iot.channelPub("Sensors", {
+								"Type": "TassAI",
+								"Sensor": "USB Camera",
+								"Value": known,
+								"Message": mesg
+							})
+
+							# Send iotJumpWay notification
+							self.iot.channelPub("Cameras", {
+								"Type": "TassAI",
+								"Sensor": "USB Camera",
+								"Value": known,
+								"Message": mesg
+							})
 
 						# Draws facial landmarks
 						for (x, y) in coordsi:
