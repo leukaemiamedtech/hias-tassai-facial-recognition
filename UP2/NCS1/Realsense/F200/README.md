@@ -269,37 +269,36 @@ To make sure that your server is responding correctly use the following command:
 You should see the following output:
 
 ```
-2020-09-30 02:22:27,315 - Camera - INFO - Helpers class initialization complete.
-2020-09-30 02:22:27,316 - iotJumpWay - INFO - Helpers class initialization complete.
-2020-09-30 02:22:27,316 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
-2020-09-30 02:22:27,317 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
-2020-09-30 02:22:27,317 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
-2020-09-30 02:22:27,345 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
-2020-09-30 02:22:27,346 - iotJumpWay - INFO - -- Subscribed to Device Commands Channel
-2020-09-30 02:22:27,350 - Sockets - INFO - Helpers class initialization complete.
-2020-09-30 02:22:27,350 - Sockets - INFO - Socket Helper Class initialization complete.
-2020-09-30 02:22:27,350 - Camera - INFO - F200 Class initialization complete.
-2020-09-30 02:22:27,354 - Sockets - INFO - Subscribed to socket: tcp://localhost:8181
-2020-09-30 02:22:27,356 - Camera - INFO - Camera server started on ###.###.#.##:8080
-2020-09-30 02:22:27,356 - TassAI - INFO - Helpers class initialization complete.
-2020-09-30 02:22:27,357 - TassAI - INFO - TassAI class initialized.
-2020-09-30 02:22:27,358 - NCS1 - INFO - Helpers class initialization complete.
-2020-09-30 02:22:28,469 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
-2020-09-30 02:22:30,052 - iotJumpWay - INFO - rc: 0
-2020-09-30 02:22:30,054 - iotJumpWay - INFO - Published to Device Status 1/Devices/1/11/Status
-2020-09-30 02:22:30,054 - iotJumpWay - INFO - JumpWayMQTT Subscription: 1
-2020-09-30 02:22:30,055 - iotJumpWay - INFO - -- Published to Device channel
-2020-09-30 02:22:31,047 - NCS1 - INFO - Connected to Neural Compute Stick 1
-2020-09-30 02:22:31,083 - NCS1 - INFO - Loaded NCS1 graph
-2020-09-30 02:22:31,403 - NCS1 - INFO - Known data preprocessed!
-2020-09-30 02:22:31,404 - NCS1 - INFO - NCS1 class initialized.
-2020-09-30 02:22:31,404 - TassAI - INFO - NCS1 configured.
-2020-09-30 02:22:31,406 - Sockets - INFO - Started & connected to socket server: tcp://localhost:8181
-2020-09-30 02:22:32,985 - NCS1 - INFO - Calculated Match: 0.6689949035644531
-2020-09-30 02:22:32,986 - NCS1 - INFO - TassAI identified User #1
-2020-09-30 02:22:32,987 - iotJumpWay - INFO - -- Published to Device channel
-2020-09-30 02:22:32,989 - iotJumpWay - INFO - -- Published to Device channel
-
+2020-09-30 02:53:36,977 - Camera - INFO - Helpers class initialization complete.
+2020-09-30 02:53:36,978 - iotJumpWay - INFO - Helpers class initialization complete.
+2020-09-30 02:53:36,979 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
+2020-09-30 02:53:36,979 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
+2020-09-30 02:53:36,979 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
+2020-09-30 02:53:37,057 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
+2020-09-30 02:53:37,058 - iotJumpWay - INFO - -- Subscribed to Device Commands Channel
+2020-09-30 02:53:37,060 - Sockets - INFO - Helpers class initialization complete.
+2020-09-30 02:53:37,062 - Sockets - INFO - Socket Helper Class initialization complete.
+2020-09-30 02:53:37,062 - Camera - INFO - F200 Class initialization complete.
+2020-09-30 02:53:37,068 - Sockets - INFO - Subscribed to socket: tcp://localhost:8181
+2020-09-30 02:53:37,068 - TassAI - INFO - Helpers class initialization complete.
+2020-09-30 02:53:37,069 - TassAI - INFO - TassAI class initialized.
+2020-09-30 02:53:37,071 - NCS1 - INFO - Helpers class initialization complete.
+2020-09-30 02:53:38,194 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
+2020-09-30 02:53:38,195 - Camera - INFO - Camera server started on ###.###.##.##:8080
+2020-09-30 02:53:39,770 - iotJumpWay - INFO - rc: 0
+2020-09-30 02:53:39,771 - iotJumpWay - INFO - Published to Device Status 1/Devices/1/11/Status
+2020-09-30 02:53:39,772 - iotJumpWay - INFO - JumpWayMQTT Subscription: 1
+2020-09-30 02:53:39,772 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-30 02:53:40,754 - NCS1 - INFO - Connected to Neural Compute Stick 1
+2020-09-30 02:53:40,791 - NCS1 - INFO - Loaded NCS1 graph
+2020-09-30 02:53:41,110 - NCS1 - INFO - Known data preprocessed!
+2020-09-30 02:53:41,111 - NCS1 - INFO - NCS1 class initialized.
+2020-09-30 02:53:41,111 - TassAI - INFO - NCS1 configured.
+2020-09-30 02:53:41,113 - Sockets - INFO - Started & connected to socket server: tcp://localhost:8181
+2020-09-30 02:53:43,046 - NCS1 - INFO - Calculated Match: 0.6809008717536926
+2020-09-30 02:53:43,047 - NCS1 - INFO - TassAI identified User #1
+2020-09-30 02:53:43,049 - iotJumpWay - INFO - -- Published to Device channel
+2020-09-30 02:53:43,051 - iotJumpWay - INFO - -- Published to Device channel
 ```
 
 Now visit URL replacing the values as expected: **http://YourUp2Ip:YourPort/YourStreamFile**.
