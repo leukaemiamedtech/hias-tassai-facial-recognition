@@ -1,6 +1,6 @@
 # Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss
 ## TassAI
-### UP2 OpenVINO Facial Recognition Foscam Security System
+### UP2 OpenVINO Foscam Facial Recognition Security System class.
 
 [![Facial Recognition Security Systems](../../../Media/Images/hias-facial-recognition.jpg)](https://github.com/LeukemiaAiResearch/TassAI/)
 
@@ -40,7 +40,7 @@
 &nbsp;
 
 # Introduction
-The UP2 OpenVINO Facial Recognition Foscam Security System connects to a Foscam IP camera and uses **facial detection**/**facial reidentification** and **facial landmark** classifier to provide Facial Recognition with OpenVINO on the CPU and VPU (Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2).
+The UP2 OpenVINO Foscam Facial Recognition Security System connects to a Foscam IP camera and uses **facial detection**/**facial reidentification** and **facial landmark** classifier to provide Facial Recognition with OpenVINO on the CPU and VPU (Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2).
 
 &nbsp;
 
@@ -78,7 +78,7 @@ If you are going to be using the full system you will need to install the [HIAS]
 &nbsp;
 
 # Setup
-Now we will setup the UP2 OpenVINO Facial Recognition Foscam Security System. The following tutorial will take you through the setup steps.
+Now we will setup the UP2 OpenVINO Foscam Facial Recognition Security System. The following tutorial will take you through the setup steps.
 
 ## UFW Firewall
 UFW firewall is used to protect the ports of your device. Use the following command to check the status of your firewall:
@@ -107,7 +107,7 @@ To allow access to the ports use the following command for each of your ports:
 ```
   sudo ufw allow 22
   sudo ufw allow 8080
-  audo ufw enable
+  sudo ufw enable
   sudo ufw status
 ```
 
@@ -185,7 +185,7 @@ Now close your existing terminal and open a new open. Once in your new terminal 
 ## Clone the repository
 Clone the [HIAS TassAI](https://github.com/LeukemiaAiResearch/TassAI "HIAS TassAI") repository from the [Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss](https://github.com/LeukemiaAiResearch "Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss") Github Organization.
 
-To clone the repository and install the UP2 OpenVINO Facial Recognition Foscam Security System, make sure you have Git installed. Now navigate to the home directory on your device using terminal/commandline, and then use the following command.
+To clone the repository and install the UP2 OpenVINO Foscam Facial Recognition Security System, make sure you have Git installed. Now navigate to the home directory on your device using terminal/commandline, and then use the following command.
 
 ```
   git clone https://github.com/LeukemiaAiResearch/TassAI.git
@@ -279,7 +279,7 @@ You need to setup your iotJumpWay TassAI security device that will be used to co
 - For **Stream File**, this can be anything you like but it must end with **.mjpg**.
 - For **Socket Port** add what ever port you used in the configuration.
 
-Once you have created your device you will be taken to the new device page. Add your server name and the information provided on that page to your  configuration.
+Once you have created your device you will be taken to the new device page. Add your server name and the information provided on that page to your  configuration. You will also need an [ipinfo](https://ipinfo.io/) API key.
 
 ```
   "iotJumpWay": {
@@ -324,36 +324,40 @@ In your first terminal, use the following command:
 You should see the following output:
 
 ```
-2020-08-28 07:11:40,241 - Foscam - INFO - Helpers class initialization complete.
-2020-08-28 07:11:40,243 - iotJumpWay - INFO - Helpers class initialization complete.
-2020-08-28 07:11:40,243 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
-2020-08-28 07:11:40,244 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
-2020-08-28 07:11:40,244 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
-2020-08-28 07:11:40,271 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
-2020-08-28 07:11:40,274 - Sockets - INFO - Helpers class initialization complete.
-2020-08-28 07:11:40,274 - Sockets - INFO - Socket Helper Class initialization complete.
-2020-08-28 07:11:40,275 - Foscam - INFO - Foscam Class initialization complete.
-2020-08-28 07:11:40,284 - Sockets - INFO - Subscribed to socket: tcp://localhost:8181
-2020-08-28 07:11:40,285 - TassAI - INFO - Helpers class initialization complete.
-2020-08-28 07:11:40,287 - TassAI - INFO - TassAI class initialized.
-2020-08-28 07:11:40,290 - Foscam - INFO - Foscam server started on ###.###.#.##:8080
-2020-08-28 07:11:40,291 - OpenCV - INFO - Helpers class initialization complete.
-2020-08-28 07:11:40,302 - OpenCV - INFO - OpenCV class initialized.
-2020-08-28 07:11:40,303 - TassAI - INFO - Connected To Camera
-2020-08-28 07:11:40,304 - TassAI - INFO - Loading the model from '/home/YourUser/TassAI/UP2/OpenVINO/Foscam/Model/face-detection-retail-0004.xml'
-2020-08-28 07:11:40,304 - OpenCV - INFO - Connecting to Foscam.
-2020-08-28 07:11:40,326 - TassAI - INFO - Model loaded
-2020-08-28 07:11:40,336 - TassAI - INFO - Loading the model from '/home/YourUser/TassAI/UP2/OpenVINO/Foscam/Model/landmarks-regression-retail-0009.xml'
-2020-08-28 07:11:40,350 - TassAI - INFO - Model loaded
-2020-08-28 07:11:40,351 - TassAI - INFO - Loading the model from '/home/YourUser/TassAI/UP2/OpenVINO/Foscam/Model/face-reidentification-retail-0095.xml'
-2020-08-28 07:11:40,421 - TassAI - INFO - Model loaded
-2020-08-28 07:11:42,931 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
-2020-08-28 07:11:42,936 - iotJumpWay - INFO - rc: 0
-2020-08-28 07:11:42,937 - iotJumpWay - INFO - Published to Device Status 1/Devices/1/20/Status
-2020-08-28 07:11:42,938 - iotJumpWay - INFO - -- Published to Device channel
-2020-08-28 07:11:45,983 - OpenCV - INFO - Connected to Foscam.
-2020-08-28 07:11:54,306 - TassAI - INFO - Models loaded
-
+2020-10-01 15:28:24,863 - Foscam - INFO - Helpers class initialization complete.
+2020-10-01 15:28:24,864 - iotJumpWay - INFO - Helpers class initialization complete.
+2020-10-01 15:28:24,864 - iotJumpWay - INFO - Initiating Local iotJumpWay Device.
+2020-10-01 15:28:24,865 - iotJumpWay - INFO - JumpWayMQTT Device Initiated.
+2020-10-01 15:28:24,865 - iotJumpWay - INFO - Initiating Local iotJumpWay Device Connection.
+2020-10-01 15:28:24,892 - iotJumpWay - INFO - Local iotJumpWay Device Connection Initiated.
+2020-10-01 15:28:24,895 - Sockets - INFO - Helpers class initialization complete.
+2020-10-01 15:28:24,896 - Sockets - INFO - Socket Helper Class initialization complete.
+2020-10-01 15:28:24,896 - Foscam - INFO - Foscam Class initialization complete.
+2020-10-01 15:28:24,900 - TassAI - INFO - Helpers class initialization complete.
+2020-10-01 15:28:24,904 - TassAI - INFO - TassAI class initialized.
+2020-10-01 15:28:24,906 - Sockets - INFO - Subscribed to socket: tcp://localhost:8181
+2020-10-01 15:28:24,908 - Foscam - INFO - Foscam server started on 192.168.1.26:8080
+2020-10-01 15:28:24,909 - OpenCV - INFO - Helpers class initialization complete.
+2020-10-01 15:28:24,918 - OpenCV - INFO - OpenCV class initialized.
+2020-10-01 15:28:24,919 - TassAI - INFO - Connected To Camera
+2020-10-01 15:28:24,919 - OpenCV - INFO - Connecting to Foscam.
+2020-10-01 15:28:24,919 - TassAI - INFO - Loading the model from '/home/up2a/TassAI/UP2/OpenVINO/Foscam/Model/face-detection-retail-0004.xml'
+2020-10-01 15:28:24,942 - TassAI - INFO - Model loaded
+2020-10-01 15:28:24,953 - iotJumpWay - INFO - Local iotJumpWay Device Connection Successful.
+2020-10-01 15:28:24,954 - iotJumpWay - INFO - rc: 0
+2020-10-01 15:28:24,954 - iotJumpWay - INFO - Published to Device Status 1/Devices/4/2/Status
+2020-10-01 15:28:24,955 - iotJumpWay - INFO - -- Published to Device channel
+2020-10-01 15:28:24,952 - TassAI - INFO - Loading the model from '/home/up2a/TassAI/UP2/OpenVINO/Foscam/Model/landmarks-regression-retail-0009.xml'
+2020-10-01 15:28:24,969 - TassAI - INFO - Model loaded
+2020-10-01 15:28:24,970 - TassAI - INFO - Loading the model from '/home/up2a/TassAI/UP2/OpenVINO/Foscam/Model/face-reidentification-retail-0095.xml'
+2020-10-01 15:28:25,038 - TassAI - INFO - Model loaded
+2020-10-01 15:28:26,462 - TassAI - INFO - Models loaded
+ERROR:root:The images database folder has no images.
+2020-10-01 15:28:26,616 - TassAI - INFO - Database is built, registered 0 identities
+INFO:TassAI:Database is built, registered 0 identities
+2020-10-01 15:28:26,617 - Sockets - INFO - Started & connected to socket server: tcp://localhost:8181
+INFO:Sockets:Started & connected to socket server: tcp://localhost:8181
+2020-10-01 15:28:30,668 - OpenCV - INFO - Connected to Foscam.
 ```
 
 Now visit URL replacing the values as expected: **http://YourUp2Ip:YourPort/YourStreamFile**.
@@ -405,7 +409,7 @@ Next add the following code to the file, replacing **YourUser** with the usernam
 
 ```
 [Unit]
-Description=TassAI UP2 OpenVINO Facial Recognition Foscam Security System
+Description=TassAI UP2 OpenVINO Foscam Facial Recognition Security System
 After=multi-user.target
 
 [Service]
@@ -434,7 +438,7 @@ sudo systemctl status Foscam.service
 You should see the following output.
 
 ```
-● api.service - TassAI UP2 OpenVINO Facial Recognition Foscam Security System
+● api.service - TassAI UP2 OpenVINO Foscam Facial Recognition Security System
    Loaded: loaded (/lib/systemd/system/Security.service; enabled; vendor preset: enabled)
    Active: active (running) since Mon 2020-08-24 19:45:31 CEST; 4s ago
  Main PID: 3481 (python3)
@@ -457,7 +461,7 @@ sudo systemctl status Foscam.service
 # HIAS UI
 ![TassAI Foscam HIAS Stream](Media/Images/foscam-hias-stream.jpg)
 
-If you visit the device page in the HIAS UI by navigating to **Security->TassAI->List**, you will be able to locate your device. On your device page you will be able to see your stream. This stream is encrypted and is password protected. If you have not authenticated yourself for the HIAS streams a pop up will ask you to provide your HIAS UI user credentials.
+If you visit the device page in the HIAS UI by navigating to **Security->GeniSysAI->List**, you will be able to locate your device. On your device page you will be able to see your stream. This stream is encrypted and is password protected. If you have not authenticated yourself for the HIAS streams a pop up will ask you to provide your HIAS UI user credentials.
 
 ![TassAI Foscam HIAS Data](Media/Images/hias-device-life-data.png)
 

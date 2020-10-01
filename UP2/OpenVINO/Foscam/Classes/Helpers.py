@@ -1,14 +1,14 @@
 ######################################################################################################
 #
 # Organization:  Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss
-# Project:       UP2 OpenVINO Facial Recognition Foscam Security System
+# Project:       UP2 OpenVINO Foscam Facial Recognition Security System
 #
 # Author:        Adam Milton-Barker (AdamMiltonBarker.com)
 #
 # Title:         Helpers Class
 # Description:   Common helper functions.
 # License:       MIT License
-# Last Modified: 2020-09-28
+# Last Modified: 2020-10-01
 #
 ######################################################################################################
 

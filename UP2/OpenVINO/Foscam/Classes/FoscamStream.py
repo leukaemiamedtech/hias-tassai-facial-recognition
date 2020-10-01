@@ -1,14 +1,14 @@
-######################################################################################################
+# ######################################################################################################
 #
 # Organization:  Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss
-# Project:       UP2 OpenVINO Facial Recognition Foscam Security System
+# Project:       UP2 OpenVINO Foscam Facial Recognition Security System
 #
 # Author:        Adam Milton-Barker (AdamMiltonBarker.com)
 #
 # Title:         FoscamStream Class
 # Description:   Streams the processed frames to a local video server.
 # License:       MIT License
-# Last Modified: 2020-09-28
+# Last Modified: 2020-10-01
 #
 ######################################################################################################
 

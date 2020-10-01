@@ -2,14 +2,14 @@
 ######################################################################################################
 #
 # Organization:  Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss
-# Project:       UP2 OpenVINO Facial Recognition Foscam Security System
+# Project:       UP2 OpenVINO Foscam Facial Recognition Security System
 #
 # Author:        Adam Milton-Barker (AdamMiltonBarker.com)
 #
 # Title:         FoscamRead Class
 # Description:   Reads frames from a Foscam IP camera and streams them to a socket stream.
 # License:       MIT License
-# Last Modified: 2020-09-28
+# Last Modified: 2020-10-01
 #
 ######################################################################################################
 
@@ -24,7 +24,7 @@ from imutils import face_utils
 from threading import Thread
 
 from Classes.Helpers import Helpers
-from Classes.GeniSysAI import GeniSysAI
+from Classes.TassAI import TassAI
 
 class FoscamRead(Thread):
 	""" FoscamRead Class
@@ -53,15 +53,15 @@ class FoscamRead(Thread):
 		self.font = cv2.FONT_HERSHEY_SIMPLEX
 		self.color = (0,0,0)
 
-		# Starts the GeniSysAI module
-		self.GeniSysAI = GeniSysAI()
+		# Starts the TassAI module
+		self.TassAI = TassAI()
 		# Connects to the camera
-		self.GeniSysAI.connect()
+		self.TassAI.connect()
 		# Loads the required models
-		self.GeniSysAI.load_models()
+		self.TassAI.load_models()
 		# Loads known images
-		self.GeniSysAI.load_known()
-		self.publishes = [None] * (len(self.GeniSysAI.faces_database) + 1)
+		self.TassAI.load_known()
+		self.publishes = [None] * (len(self.TassAI.faces_database) + 1)
 
 		# Starts the socket server
 		soc = self.Sockets.connect(self.Helpers.confs["Socket"]["host"],
@@ -72,14 +72,14 @@ class FoscamRead(Thread):
 				t1 = time.perf_counter()
 
 				# Reads the current frame
-				frame = self.GeniSysAI.camera.get(0.65)
+				frame = self.TassAI.camera.get(0.65)
 
 				width = frame.shape[1]
 				# Processes the frame
-				detections = self.GeniSysAI.process(frame)
+				detections = self.TassAI.process(frame)
 
 				# Writes header to frame
-				cv2.putText(frame, "GeniSysAI Camera", (10, 30), self.font,
+				cv2.putText(frame, "TassAI Camera", (10, 30), self.font,
 							0.7, self.color, 2, cv2.LINE_AA)
 
 				# Writes date to frame
@@ -88,14 +88,14 @@ class FoscamRead(Thread):
 
 				if len(detections):
 					for roi, landmarks, identity in zip(*detections):
-						frame, label = self.GeniSysAI.draw_detection_roi(frame, roi, identity)
-						#frame = self.GeniSysAI.draw_detection_keypoints(frame, roi, landmarks)
+						frame, label = self.TassAI.draw_detection_roi(frame, roi, identity)
+						#frame = self.TassAI.draw_detection_keypoints(frame, roi, landmarks)
 
 						if label is "Unknown":
 							label = 0
-							mesg = "GeniSysAI identified intruder"
+							mesg = "TassAI identified intruder"
 						else:
-							mesg = "GeniSysAI identified User #" + str(label)
+							mesg = "TassAI identified User #" + str(label)
 
 						# If iotJumpWay publish for user is in past
 						if (self.publishes[int(label)] is None or (self.publishes[int(label)] + (1 * 20)) < time.time()):
@@ -104,7 +104,7 @@ class FoscamRead(Thread):
 
 							# Send iotJumpWay notification
 							self.iot.channelPub("Sensors", {
-								"Type": "GeniSysAI",
+								"Type": "TassAI",
 								"Sensor": "Foscam Camera",
 								"Value": label,
 								"Message": mesg
@@ -112,7 +112,7 @@ class FoscamRead(Thread):
 
 							# Send iotJumpWay notification
 							self.iot.channelPub("Cameras", {
-								"Type": "GeniSysAI",
+								"Type": "TassAI",
 								"Sensor": "Foscam Camera",
 								"Value": label,
 								"Message": mesg
@@ -138,5 +138,5 @@ class FoscamRead(Thread):
 				time2 += elapsedTime
 
 			except KeyboardInterrupt:
-				self.GeniSysAI.lcv.release()
+				self.TassAI.lcv.release()
 				break

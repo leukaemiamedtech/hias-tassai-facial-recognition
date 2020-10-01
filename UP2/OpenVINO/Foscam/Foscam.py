@@ -2,14 +2,14 @@
 ######################################################################################################
 #
 # Organization:  Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss
-# Project:       UP2 OpenVINO Facial Recognition Foscam Security System
+# Project:       UP2 OpenVINO Foscam Facial Recognition Security System
 #
 # Author:        Adam Milton-Barker (AdamMiltonBarker.com)
-
+#
 # Title:         Foscam Class
-# Description:   UP2 OpenVINO Facial Recognition Foscam Security System
+# Description:   The UP2 OpenVINO Foscam Facial Recognition Security System.
 # License:       MIT License
-# Last Modified: 2020-09-28
+# Last Modified: 2020-10-01
 #
 ######################################################################################################
 
@@ -29,10 +29,11 @@ from Classes.FoscamRead import FoscamRead
 from Classes.FoscamStream import FoscamStream
 from Classes.Sockets import Sockets
 
+
 class Foscam():
 	""" Foscam Class
 
-	UP2 OpenVINO Facial Recognition Foscam Security System.
+	The UP2 OpenVINO Foscam Facial Recognition Security System.
 	"""
 
 	def __init__(self):
@@ -56,16 +57,17 @@ class Foscam():
 		hdd = psutil.disk_usage('/').percent
 		tmp = psutil.sensors_temperatures()['coretemp'][0].current
 		r = requests.get('http://ipinfo.io/json?token=' +
-                   self.Helpers.confs["iotJumpWay"]["ipinfo"])
+		                 self.Helpers.confs["iotJumpWay"]["ipinfo"])
 		data = r.json()
 		location = data["loc"].split(',')
 
-		self.Helpers.logger.info("TassAI Life (TEMPERATURE): " + str(tmp) + "\u00b0")
-		self.Helpers.logger.info("TassAI Life (CPU): " + str(cpu) + "%")
-		self.Helpers.logger.info("TassAI Life (Memory): " + str(mem) + "%")
-		self.Helpers.logger.info("TassAI Life (HDD): " + str(hdd) + "%")
-		self.Helpers.logger.info("TassAI Life (LAT): " + str(location[0]))
-		self.Helpers.logger.info("TassAI Life (LNG): " + str(location[1]))
+		self.Helpers.logger.info(
+			"GeniSysAI Life (TEMPERATURE): " + str(tmp) + "\u00b0")
+		self.Helpers.logger.info("GeniSysAI Life (CPU): " + str(cpu) + "%")
+		self.Helpers.logger.info("GeniSysAI Life (Memory): " + str(mem) + "%")
+		self.Helpers.logger.info("GeniSysAI Life (HDD): " + str(hdd) + "%")
+		self.Helpers.logger.info("GeniSysAI Life (LAT): " + str(location[0]))
+		self.Helpers.logger.info("GeniSysAI Life (LNG): " + str(location[1]))
 
 		# Send iotJumpWay notification
 		self.iot.channelPub("Life", {
@@ -73,8 +75,8 @@ class Foscam():
 			"Memory": str(mem),
 			"Diskspace": str(hdd),
 			"Temperature": str(tmp),
-			"Latitude": float(location[0]),
-			"Longitude": float(location[1])
+			"Latitude": "",
+			"Longitude": ""
 		})
 
 		threading.Timer(300.0, self.life).start()
@@ -94,13 +96,16 @@ class Foscam():
 		self.iot.disconnect()
 		sys.exit(1)
 
+
 Foscam = Foscam()
+
 
 def main():
 	# Starts threading
 	signal.signal(signal.SIGINT, Foscam.signal_handler)
 	signal.signal(signal.SIGTERM, Foscam.signal_handler)
 	Foscam.threading()
+
 
 if __name__ == "__main__":
 	main()
