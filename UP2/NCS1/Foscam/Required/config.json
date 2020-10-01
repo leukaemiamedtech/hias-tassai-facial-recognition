@@ -1,0 +1,40 @@
+{
+    "Classifier": {
+        "Allowed": [
+            ".jpg",
+            ".JPG",
+            ".png",
+            ".PNG"
+        ],
+        "Dlib": "Model/dlib/shape_predictor_68_face_landmarks.dat",
+        "Graph": "Model/TassAI.graph",
+        "Known": "Model/Data/Known/",
+        "Test": "Model/Data/Test/",
+        "Threshold": 1.20
+    },
+    "Foscam": {
+        "RTSPuser": "",
+        "RTSPpass": "",
+        "RTSPip": "",
+        "RTSPport": "554",
+        "RTSPendpoint": "videoMain",
+        "IP": "",
+        "Port": 8080
+    },
+    "iotJumpWay": {
+        "host": "",
+        "port": 8883,
+        "ip": "localhost",
+        "ipinfo": "",
+        "lid": 0,
+        "zid": 0,
+        "did": 0,
+        "dn": "",
+        "un": "",
+        "pw": ""
+    },
+    "Socket": {
+        "host": "localhost",
+        "port": 8181
+    }
+}
