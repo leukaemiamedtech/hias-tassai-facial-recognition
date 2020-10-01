@@ -81,12 +81,18 @@ Below you will find details of the Facial Recognition Security System projects p
 
 ## UP2 Vision Projects
 
+### Neural Compute Stick 1
+
 | Project   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [UP2 NCS1 API](UP2/NCS1/API "UP2 NCS1 API")   | The UP2 NCS1 Facial API Security System hosts API endpoints exposing a Facenet classifier that uses Neural Compute Stick 1 for remote Facial Recognition requests.  |
 | [UP2 NCS1 Foscam](UP2/NCS1/Foscam "UP2 NCS1 Foscam")   | The UP2 NCS1 Foscam Security System connects to a Foscam IP camera exposing a Facenet classifier that uses Neural Compute Stick 1 to provide Facial Recognition. |
 | [UP2 NCS1 USB Camera](UP2/NCS1/USBCam "UP2 NCS1 USB Camera")   | The UP2 NCS1 USB Camera Security System connects to a USB camera exposing a Facenet classifier that uses Neural Compute Stick 1 to provide Facial Recognition.   |
-| [UP2 OpenVINO API](UP2/OpenVINO/API "UP2 OpenVINO API")   | The UP2 OpenVINO Facial API Security System hosts API endpoints exposing a Facenet classifier on VPU (Neural Compute Stick 1 & 2) for remote Facial Recognition requests.  |
+
+### OpenVINO Neural Compute Stick 1 & 2
+
+| Project   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [UP2 OpenVINO Foscam Camera](UP2/OpenVINO/Foscam "UP2 OpenVINO Foscam Camera")   | The UP2 OpenVINO USB Camera Security System connects to a Foscam IP camera and uses facial detection/facial reidentification and facial landmark classifiers to provide Facial Recognition on VPU (Neural Compute Stick 1 & 2).   |
 | [UP2 OpenVINO USB Camera](UP2/OpenVINO/USBCam "UP2 OpenVINO USB Camera")   | The UP2 OpenVINO USB Camera Security System connects to a USB camera and uses facial detection/facial reidentification and facial landmark classifiers to provide Facial Recognition on VPU (Neural Compute Stick 1 & 2).   |
 
