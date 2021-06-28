@@ -1,0 +1,43 @@
+{
+    "agent": {
+        "cam": 0,
+        "cores": 8,
+        "params": [
+            "classify",
+            "server",
+            "classify_http"
+        ]
+    },
+    "data": {
+        "dim": 224,
+        "file_type": ".png",
+        "labels": [0, 1],
+        "test": "model/data/test",
+        "test_data": [],
+        "valid_types": [
+            ".JPG",
+            ".JPEG",
+            ".PNG",
+            ".GIF",
+            ".jpg",
+            ".jpeg",
+            ".png",
+            ".gif"
+        ]
+    },
+    "model": {
+        "alowed": [
+            ".jpg",
+            ".JPG",
+            ".png",
+            ".PNG"
+        ],
+        "detection": "model/face-detection-retail-0004.xml",
+        "reidentification": "model/face-reidentification-retail-0095.xml",
+        "landmarks": "model/landmarks-regression-retail-0009.xml",
+        "runas": "MYRIAD",
+        "known": "model/data/known/",
+        "test": "model/data/test/",
+        "threshold": 1.20
+    }
+}
